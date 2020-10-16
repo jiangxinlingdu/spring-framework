@@ -214,6 +214,7 @@ public class AnnotatedBeanDefinitionReader {
 	<T> void doRegisterBean(Class<T> beanClass, @Nullable Supplier<T> instanceSupplier, @Nullable String name,
 			@Nullable Class<? extends Annotation>[] qualifiers, BeanDefinitionCustomizer... definitionCustomizers) {
 
+		//生成一个 beandefinition 对象，为什么要生成，因为他是起始 不然没办法走后续逻辑 后续都需要基于他上面的注解进行扫描
 		AnnotatedGenericBeanDefinition abd = new AnnotatedGenericBeanDefinition(beanClass);
 		if (this.conditionEvaluator.shouldSkip(abd.getMetadata())) {
 			return;
