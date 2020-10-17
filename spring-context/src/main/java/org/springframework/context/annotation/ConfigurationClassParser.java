@@ -540,6 +540,8 @@ class ConfigurationClassParser {
 		}
 	}
 
+	//处理 import 那些主键相关内容
+	//Process any @Import annotations
 	private void processImports(ConfigurationClass configClass, SourceClass currentSourceClass,
 			Collection<SourceClass> importCandidates, boolean checkForCircularImports) {
 
