@@ -184,6 +184,8 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 					if (singletonFactory != null) {
 						singletonObject = singletonFactory.getObject();
 						//为什么要用 三级缓存？ 因为如果不用 那么每次需要从二级缓存工厂里面获取 代价比较大，
+						//addSingletonFactory(beanName, () -> getEarlyBeanReference(beanName, mbd, bean))
+						// 执行的这个 getEarlyBeanReference 里面很多操作
 						// 所以就直接三级缓存把结果缓存下，下次需要直接从三级缓存里面获取
 						this.earlySingletonObjects.put(beanName, singletonObject);
 						this.singletonFactories.remove(beanName);
