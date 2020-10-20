@@ -46,6 +46,7 @@ public class AnnotationConfigApplicationContextTests {
 
 	@Test
 	public void scanAndRefresh() {
+		// spring 提供的测试类非常全
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("org.springframework.context.annotation6");
 		context.refresh();
