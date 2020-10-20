@@ -998,6 +998,9 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 * @throws BeanDefinitionStoreException in case of an invalid bean definition
 	 */
 	@Override
+	/**
+	 * 因为 bean 定义可能会被修改，处理的时候又想处理最新的，那就需要将可能修改的 bean 定义再一次合并成统一的 RootBeanDefinition。
+	 */
 	public BeanDefinition getMergedBeanDefinition(String name) throws BeansException {
 		String beanName = transformedBeanName(name);
 		// Efficiently check whether bean definition exists in this factory.
@@ -1273,6 +1276,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					try {
 						String parentBeanName = transformedBeanName(bd.getParentName());
 						if (!beanName.equals(parentBeanName)) {
+							//因为 bean 定义可能会被修改，处理的时候又想处理最新的，那就需要将可能修改的 bean 定义再一次合并成统一的 RootBeanDefinition。
 							pbd = getMergedBeanDefinition(parentBeanName);
 						}
 						else {
