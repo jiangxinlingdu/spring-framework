@@ -125,7 +125,8 @@ public class PropertyPlaceholderHelper {
 	}
 
 	/**
-	 * 解析 占位符 里面的内容 包括设置的默认值
+	 * 解析 Spring 配置文件路径中的 ${} 占位符，
+	 * 替换为系统变量中PlaceHolder对应的Value值
 	 */
 	protected String parseStringValue(
 			String value, PlaceholderResolver placeholderResolver, @Nullable Set<String> visitedPlaceholders) {
