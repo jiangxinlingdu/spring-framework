@@ -124,6 +124,9 @@ public class PropertyPlaceholderHelper {
 		return parseStringValue(value, placeholderResolver, null);
 	}
 
+	/**
+	 * 解析 占位符 里面的内容 包括设置的默认值
+	 */
 	protected String parseStringValue(
 			String value, PlaceholderResolver placeholderResolver, @Nullable Set<String> visitedPlaceholders) {
 

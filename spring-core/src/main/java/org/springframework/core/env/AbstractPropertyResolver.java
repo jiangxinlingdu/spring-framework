@@ -53,8 +53,15 @@ public abstract class AbstractPropertyResolver implements ConfigurablePropertyRe
 
 	private boolean ignoreUnresolvableNestedPlaceholders = false;
 
+	/**
+	 * 占位符 前缀
+	 */
+
 	private String placeholderPrefix = SystemPropertyUtils.PLACEHOLDER_PREFIX;
 
+	/**
+	 * 占位符 后缀
+	 */
 	private String placeholderSuffix = SystemPropertyUtils.PLACEHOLDER_SUFFIX;
 
 	@Nullable
@@ -196,6 +203,9 @@ public abstract class AbstractPropertyResolver implements ConfigurablePropertyRe
 	}
 
 	@Override
+	/**
+	 * 解析 如果有 ${} 这样的进行解析
+	 */
 	public String resolvePlaceholders(String text) {
 		if (this.nonStrictHelper == null) {
 			this.nonStrictHelper = createPlaceholderHelper(true);

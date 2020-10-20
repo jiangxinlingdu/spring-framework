@@ -109,6 +109,7 @@ public abstract class AbstractEnvironment implements ConfigurableEnvironment {
 
 	private final MutablePropertySources propertySources = new MutablePropertySources();
 
+	//属性解析器
 	private final ConfigurablePropertyResolver propertyResolver =
 			new PropertySourcesPropertyResolver(this.propertySources);
 
