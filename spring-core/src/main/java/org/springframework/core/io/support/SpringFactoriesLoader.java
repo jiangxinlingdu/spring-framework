@@ -59,6 +59,10 @@ import org.springframework.util.StringUtils;
  * @author Sam Brannen
  * @since 3.2
  */
+/**
+ * SpringFactoriesLoader 属于 Spring 框架私有的一种扩展方案，其主要功能就是从指定的配置文件 META-INF/spring.factories 加载配置。
+ *
+ */
 public final class SpringFactoriesLoader {
 
 	/**
