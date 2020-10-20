@@ -82,6 +82,8 @@ public final class SpringFactoriesLoader {
 
 
 	/**
+	 * 从 META-INF/spring.factories 加载实例化给定 factory
+	 *
 	 * Load and instantiate the factory implementations of the given type from
 	 * {@value #FACTORIES_RESOURCE_LOCATION}, using the given class loader.
 	 * <p>The returned factories are sorted through {@link AnnotationAwareOrderComparator}.
