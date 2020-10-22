@@ -244,6 +244,11 @@ public class AnnotatedBeanDefinitionReader {
 			customizer.customize(abd);
 		}
 
+		//BeanDefinitionHolder 的作用是根据名称或者别名持有 beanDefinition，承载了 name 和 BeanDefinition 的映射信息。
+		// 所以 BeanDefinitionHolder 拥有如下三个字段：
+		//1. beanDefinition：实际持有的 beanDefinition 对象；
+		//2. beanName：Bean 的名字；
+		//3. aliases：Bean 的别名；
 		BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(abd, beanName);
 		definitionHolder = AnnotationConfigUtils.applyScopedProxyMode(scopeMetadata, definitionHolder, this.registry);
 		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, this.registry);
