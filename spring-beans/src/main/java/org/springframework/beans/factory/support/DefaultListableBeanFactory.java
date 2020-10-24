@@ -934,6 +934,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 			else {
 				// Still in startup registration phase
 				this.beanDefinitionMap.put(beanName, beanDefinition);
+				// 为什么还单独 存储下名字呢？ 为了效率 如果后续仅仅需要拿 名字呢？
 				this.beanDefinitionNames.add(beanName);
 				removeManualSingletonName(beanName);
 			}

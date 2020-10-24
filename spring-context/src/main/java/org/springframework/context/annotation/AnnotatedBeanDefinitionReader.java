@@ -251,6 +251,15 @@ public class AnnotatedBeanDefinitionReader {
 		//3. aliases：Bean 的别名；
 		BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(abd, beanName);
 		definitionHolder = AnnotationConfigUtils.applyScopedProxyMode(scopeMetadata, definitionHolder, this.registry);
+		/**
+		 * 在这个 之前 spring 内容就已经 注册了 5 个 definition
+		 *
+		 * 0 = "Bean definition with name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+		 * 1 = "Bean definition with name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+		 * 2 = "Bean definition with name 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+		 * 3 = "Bean definition with name 'org.springframework.context.event.internalEventListenerProcessor'
+		 * 4 = "Bean definition with name 'org.springframework.context.event.internalEventListenerFactory'
+		 */
 		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, this.registry);
 	}
 
