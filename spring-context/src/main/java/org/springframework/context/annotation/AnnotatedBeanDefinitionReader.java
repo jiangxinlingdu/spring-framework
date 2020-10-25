@@ -253,12 +253,21 @@ public class AnnotatedBeanDefinitionReader {
 		definitionHolder = AnnotationConfigUtils.applyScopedProxyMode(scopeMetadata, definitionHolder, this.registry);
 		/**
 		 * 在这个 之前 spring 内容就已经 注册了 5 个 definition
+		 * 0 = "Bean definition with name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor':
+		 * Root bean: class [org.springframework.context.annotation.ConfigurationClassPostProcessor]
 		 *
-		 * 0 = "Bean definition with name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-		 * 1 = "Bean definition with name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-		 * 2 = "Bean definition with name 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-		 * 3 = "Bean definition with name 'org.springframework.context.event.internalEventListenerProcessor'
-		 * 4 = "Bean definition with name 'org.springframework.context.event.internalEventListenerFactory'
+		 * 1 = "Bean definition with name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor':
+		 * Root bean: class [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]
+		 *
+		 * 2 = "Bean definition with name 'org.springframework.context.annotation.internalCommonAnnotationProcessor':
+		 * Root bean: class [org.springframework.context.annotation.CommonAnnotationBeanPostProcessor]
+		 *
+		 * 3 = "Bean definition with name 'org.springframework.context.event.internalEventListenerProcessor':
+		 * Root bean: class [org.springframework.context.event.EventListenerMethodProcessor]
+		 *
+		 * 4 = "Bean definition with name 'org.springframework.context.event.internalEventListenerFactory':
+		 * Root bean: class [org.springframework.context.event.DefaultEventListenerFactory]
+		 *
 		 */
 		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, this.registry);
 	}
