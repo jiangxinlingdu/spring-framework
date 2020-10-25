@@ -417,10 +417,6 @@ public class ClassPathScanningCandidateComponentProvider implements EnvironmentC
 
 	/**
 	 * 根据 路径 classpath*:com/lingdu/test/*.class 进行扫描获取完整磁盘路径
-	 0 = {FileSystemResource@1485} "file [/Users/lingdu/data/spring-framework/spring-lingdu/out/production/classes/com/lingdu/test/AppTest.class]"
-	 1 = {FileSystemResource@1486} "file [/Users/lingdu/data/spring-framework/spring-lingdu/out/production/classes/com/lingdu/test/Lingdu.class]"
-	 2 = {FileSystemResource@1487} "file [/Users/lingdu/data/spring-framework/spring-lingdu/out/production/classes/com/lingdu/test/Test1.class]"
-	 3 = {FileSystemResource@1488} "file [/Users/lingdu/data/spring-framework/spring-lingdu/out/production/classes/com/lingdu/test/TestBean.class]"
 	 */
 	private Set<BeanDefinition> scanCandidateComponents(String basePackage) {
 		Set<BeanDefinition> candidates = new LinkedHashSet<>();
