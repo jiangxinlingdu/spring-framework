@@ -58,6 +58,7 @@ public interface ImportBeanDefinitionRegistrar {
 	 * @param importingClassMetadata annotation metadata of the importing class
 	 * @param registry current bean definition registry
 	 */
+	//很实用的拓展，自己定义 beanDefinition 之后 register进去,从而可以实现 bean 的动态注入
 	void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry);
 
 }
