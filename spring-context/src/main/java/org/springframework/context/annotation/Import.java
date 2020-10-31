@@ -57,6 +57,9 @@ public @interface Import {
 	/**
 	 * {@link Configuration @Configuration}, {@link ImportSelector},
 	 * {@link ImportBeanDefinitionRegistrar}, or regular component classes to import.
+	 * Configuration :容器会自动注册这个组件，id 默认是类的全名称，可以设置多个类
+	 * ImportSelector :返回需要导入组件的全类名数组
+	 * ImportBeanDefinitionRegistrar :手动注册 bean 到容器中
 	 */
 	Class<?>[] value();
 
