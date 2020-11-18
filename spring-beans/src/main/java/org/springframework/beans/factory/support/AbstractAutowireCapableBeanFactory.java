@@ -1780,6 +1780,14 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		return wrappedBean;
 	}
 
+
+	/**
+	 * 看到 Spring 源码中接口以 Aware 结尾的接口(XXXAware) 在 Spring 中表示对 XXX 可以感知
+	 *
+	 * 我们看到很多像 ApplicationContextAware 或者 EnvironmentAware 的 Aware 接口、并没有在 invokeAwareMethods 中被调用到、
+	 * 因为其实这些都是在使用 ApplicationContext 的时候才会被触发的、具体是在哪里被触发调用呢？
+	 * 我们可以看到 ApplicationContextAwareProcessor#invokeAwareInterfaces
+	 */
 	private void invokeAwareMethods(final String beanName, final Object bean) {
 		if (bean instanceof Aware) {
 			if (bean instanceof BeanNameAware) {
