@@ -948,6 +948,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 				}
 			}
 		}
+		// aop 提前完成代理，从而注入的属性是一个完整的 bean（如果不这么做注入的属性bean 如果需要 aop 就没办法完成
 		return exposedObject;
 	}
 
